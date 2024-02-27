@@ -82,4 +82,6 @@ return require('packer').startup(function(use)
 
   use("airblade/vim-gitgutter")
 
+  use("digitaltoad/vim-pug")
+
 end)
