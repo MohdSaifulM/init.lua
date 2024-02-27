@@ -66,4 +66,20 @@ return require('packer').startup(function(use)
       end,
   }
 
+  use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'nvim-tree/nvim-web-devicons', opt = true },
+      config = function()
+          require('lualine').setup({
+              options = {
+                  theme = 'onedark'
+              }
+          })
+      end
+  }
+
+  use("tpope/vim-fugitive")
+
+  use("airblade/vim-gitgutter")
+
 end)
