@@ -400,4 +400,6 @@ return require('packer').startup(function(use)
 
   use("theprimeagen/harpoon")
 
+  use("ThePrimeagen/vim-be-good")
+
 end)
