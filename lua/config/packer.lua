@@ -12,4 +12,20 @@ return require('packer').startup(function(use)
 	  -- or                            , branch = '0.1.x',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
+
+  use({
+	  'joshdick/onedark.vim',
+	  as = 'onedark',
+	  config = function()
+		  vim.cmd('colorscheme onedark')
+	  end
+  })
+
+  use {
+	  'nvim-treesitter/nvim-treesitter',
+	  run = function()
+		  local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+		  ts_update()
+	  end
+  }
 end)
