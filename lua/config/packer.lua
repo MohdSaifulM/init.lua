@@ -84,4 +84,6 @@ return require('packer').startup(function(use)
 
   use("digitaltoad/vim-pug")
 
+  use('wakatime/vim-wakatime')
+
 end)
