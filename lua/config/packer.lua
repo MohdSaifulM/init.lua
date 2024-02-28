@@ -400,4 +400,12 @@ return require('packer').startup(function(use)
 
   use("theprimeagen/harpoon")
 
+  use{
+      'terrortylor/nvim-comment',
+      as = 'nvim-comment',
+      config = function()
+          require('nvim_comment').setup()
+      end
+  }
+
 end)
