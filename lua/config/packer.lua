@@ -81,7 +81,7 @@ return require('packer').startup(function(use)
   use {
       "nvim-neo-tree/neo-tree.nvim",
       branch = "v3.x",
-      requires = { 
+      requires = {
           "nvim-lua/plenary.nvim",
           "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
           "MunifTanjim/nui.nvim",
@@ -399,6 +399,18 @@ return require('packer').startup(function(use)
   use('wakatime/vim-wakatime')
 
   use("theprimeagen/harpoon")
+
+  use {'kevinhwang91/nvim-ufo',
+    requires = 'kevinhwang91/promise-async',
+    config = function()
+      require('ufo').setup({
+          provider_selector = function(bufnr, filetype, buftype)
+              return ''
+          end
+      })
+    end
+}
+
 
   use{
       'terrortylor/nvim-comment',

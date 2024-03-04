@@ -10,13 +10,11 @@ vim.opt.smartindent = true
 vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
-vim.opt.updatetime = 100
 
--- Set foldmethod to "expr"
-vim.opt.foldmethod = "expr"
+vim.o.foldcolumn = '1'
+vim.o.foldlevel = 99
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
 
--- Set foldexpr to use nvim-treesitter's fold expression
-vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
-
--- Disable folding at startup
-vim.opt.foldenable = false
+vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
+vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
