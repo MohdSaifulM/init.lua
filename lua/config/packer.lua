@@ -52,19 +52,22 @@ return require('packer').startup(function(use)
 	  }
   }
 
-  use {
-      "zbirenbaum/copilot.lua",
-      cmd = "Copilot",
-      event = "InsertEnter",
-      config = function()
-          require("copilot").setup({
-            suggestion = {
-                enabled = true,
-                auto_trigger= true
-            }
-          })
-      end,
-  }
+  -- use {
+  --     "zbirenbaum/copilot.lua",
+  --     cmd = "Copilot",
+  --     event = "InsertEnter",
+  --     config = function()
+  --         require("copilot").setup({
+  --           suggestion = {
+  --               enabled = true,
+  --               auto_trigger= true
+  --           }
+  --         })
+  --     end,
+  -- }
+  --
+  use('Exafunction/codeium.vim')
+
 
   use {
       'nvim-lualine/lualine.nvim',
@@ -405,7 +408,7 @@ return require('packer').startup(function(use)
     config = function()
       require('ufo').setup({
           provider_selector = function(bufnr, filetype, buftype)
-              return ''
+              return {'treesitter', 'indent'}
           end
       })
     end
