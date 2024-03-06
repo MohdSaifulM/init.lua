@@ -52,19 +52,22 @@ return require('packer').startup(function(use)
 	  }
   }
 
-  use {
-      "zbirenbaum/copilot.lua",
-      cmd = "Copilot",
-      event = "InsertEnter",
-      config = function()
-          require("copilot").setup({
-            suggestion = {
-                enabled = true,
-                auto_trigger= true
-            }
-          })
-      end,
-  }
+  -- use {
+  --     "zbirenbaum/copilot.lua",
+  --     cmd = "Copilot",
+  --     event = "InsertEnter",
+  --     config = function()
+  --         require("copilot").setup({
+  --           suggestion = {
+  --               enabled = true,
+  --               auto_trigger= true
+  --           }
+  --         })
+  --     end,
+  -- }
+  --
+  use('Exafunction/codeium.vim')
+
 
   use {
       'nvim-lualine/lualine.nvim',
@@ -81,7 +84,7 @@ return require('packer').startup(function(use)
   use {
       "nvim-neo-tree/neo-tree.nvim",
       branch = "v3.x",
-      requires = { 
+      requires = {
           "nvim-lua/plenary.nvim",
           "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
           "MunifTanjim/nui.nvim",
@@ -400,6 +403,28 @@ return require('packer').startup(function(use)
 
   use("theprimeagen/harpoon")
 
+<<<<<<< HEAD
   use("ThePrimeagen/vim-be-good")
+=======
+  use {'kevinhwang91/nvim-ufo',
+    requires = 'kevinhwang91/promise-async',
+    config = function()
+      require('ufo').setup({
+          provider_selector = function(bufnr, filetype, buftype)
+              return {'treesitter', 'indent'}
+          end
+      })
+    end
+}
+
+
+  use{
+      'terrortylor/nvim-comment',
+      as = 'nvim-comment',
+      config = function()
+          require('nvim_comment').setup()
+      end
+  }
+>>>>>>> cda5911d84bc1bf9a54c446b69be68f7f1168434
 
 end)
