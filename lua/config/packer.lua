@@ -405,7 +405,9 @@ return require('packer').startup(function(use)
 
   use("ThePrimeagen/vim-be-good")
 
- use('nvim-tree/nvim-web-devicons')
+  use('nvim-tree/nvim-web-devicons')
+
+  use('sbdchd/neoformat')
 
   use {'kevinhwang91/nvim-ufo',
   requires = 'kevinhwang91/promise-async',
