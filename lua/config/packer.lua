@@ -416,6 +416,13 @@ return require('packer').startup(function(use)
 
   use('mbbill/undotree')
 
+  use({
+      "andrewferrier/debugprint.nvim",
+      config = function()
+          require("debugprint").setup(opts)
+      end,
+  })
+
   use {'kevinhwang91/nvim-ufo',
   requires = 'kevinhwang91/promise-async',
   config = function()
